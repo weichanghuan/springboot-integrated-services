@@ -7,6 +7,9 @@
     <groupId>springboot-integrated-services</groupId>
     <artifactId>springboot-integrated-services</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>springboot-rabbitmq</module>
+    </modules>
     <packaging>pom</packaging>
 
 
@@ -24,5 +27,6 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.5.RELEASE</version>
     </parent>
+
 
 </project>
