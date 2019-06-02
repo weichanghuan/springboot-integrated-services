@@ -10,6 +10,7 @@
     <modules>
         <module>springboot-rabbitmq</module>
         <module>springboot-hdfs</module>
+        <module>springboot-zk</module>
     </modules>
     <packaging>pom</packaging>
 
