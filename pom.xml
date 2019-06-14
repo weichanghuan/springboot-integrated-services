@@ -11,6 +11,7 @@
         <module>springboot-rabbitmq</module>
         <module>springboot-hdfs</module>
         <module>springboot-zk</module>
+        <module>springboot-netty</module>
     </modules>
     <packaging>pom</packaging>
 
