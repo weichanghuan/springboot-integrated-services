@@ -12,6 +12,8 @@
         <module>springboot-hdfs</module>
         <module>springboot-zk</module>
         <module>springboot-netty</module>
+        <module>springboot-kafka</module>
+        <module>springboot-security</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -21,6 +23,8 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.encoding>${project.build.sourceEncoding}</maven.compiler.encoding>
+        <swagger.version>2.9.2</swagger.version>
+        <jjwt.version>0.10.5</jjwt.version>
     </properties>
 
 
