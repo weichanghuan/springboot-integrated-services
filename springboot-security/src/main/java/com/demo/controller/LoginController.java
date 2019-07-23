@@ -34,4 +34,6 @@ public class LoginController {
         map.put("reslut", "OK");
         return ResponseEntity.status(HttpStatus.OK).body(APIResponse.okay(map));
     }
+
+
 }
