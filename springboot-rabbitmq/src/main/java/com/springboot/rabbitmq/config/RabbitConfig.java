@@ -1,7 +1,6 @@
 package com.springboot.rabbitmq.config;
 
 
-import com.springboot.rabbitmq.utils.SymmetricEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Binding;
@@ -11,7 +10,6 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
@@ -58,10 +56,10 @@ public class RabbitConfig implements Serializable {
 
     @Bean
     public ConnectionFactory connectionFactory() {
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory(SymmetricEncoder.AESDncode(index,address),
-                Integer.valueOf(SymmetricEncoder.AESDncode(index,port)));
-        connectionFactory.setUsername(SymmetricEncoder.AESDncode(index,userName));
-        connectionFactory.setPassword(SymmetricEncoder.AESDncode(index,pwd));
+        CachingConnectionFactory connectionFactory = new CachingConnectionFactory(address,
+                Integer.valueOf(port));
+        connectionFactory.setUsername(userName);
+        connectionFactory.setPassword(pwd);
         connectionFactory.setVirtualHost("/");
         connectionFactory.setPublisherConfirms(true);
         return connectionFactory;
@@ -72,6 +70,7 @@ public class RabbitConfig implements Serializable {
     //必须是prototype类型
     public RabbitTemplate rabbitTemplate() {
         RabbitTemplate template = new RabbitTemplate(connectionFactory());
+       // template.setMessageConverter(new Jackson2JsonMessageConverter());
         return template;
     }
 
@@ -106,7 +105,7 @@ public class RabbitConfig implements Serializable {
 
     @Bean
     public Queue queueB() {
-        return new Queue(QUEUE_A, true); //队列持久
+        return new Queue(QUEUE_B, true); //队列持久
     }
 
     @Bean

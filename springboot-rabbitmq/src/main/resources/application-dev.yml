@@ -1,6 +1,6 @@
 rabbitmq:
-    address: lvoTniItX10erfRjnzaAsA==
-    port: WZcyyDEtwmKFZDzoDltRnA==
-    username: 7AeDRvj1kJ+hErYPLdzFUA==
-    password: 7AeDRvj1kJ+hErYPLdzFUA==
+    address: 127.0.01
+    port: 5672
+    username: guest
+    password: guest
     index: wch
